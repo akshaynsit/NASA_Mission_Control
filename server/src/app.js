@@ -27,7 +27,7 @@ app.use(express.json());//Parse any incoming JSON from body of incoming request
 app.use(express.static(path.join(__dirname,'..','public')))
 app.use(planetsRouter);
 app.use(launchesRouter);
-app.get('/',(req,res)=>{
+app.get('/*',(req,res)=>{
     res.sendFile(path.join(__dirname, '..','public','index.html'))
 })
 module.exports = app;
