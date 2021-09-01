@@ -13,7 +13,7 @@ function isHabitablePlanet(planet){
 
 /* while running for the first time,our data may or may not be uploaded fully coz we are getting the data in Stream,so in that case we may 
 get empty Stream...solution --> for that we will use JS promise */
-function loadPlanetData(){
+function loadPlanetsData(){
     return new Promise((resolve,reject)=> {
         fs.createReadStream(
             path.join(__dirname, '..', '..', 'data', 'kepler_data.csv')
@@ -47,6 +47,6 @@ function getAllPlanets(){
     return habitablePlanets;
 }
 module.exports = {
-    loadPlanetData,
+    loadPlanetsData,
     getAllPlanets,
 };
