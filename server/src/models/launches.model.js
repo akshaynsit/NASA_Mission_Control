@@ -24,6 +24,7 @@ function addNewLaunch(launch){
       success:true,
       customers:['Akshay','NASA'],
   }));
+  
 }
 
 function getAllLaunches(){
@@ -31,5 +32,6 @@ function getAllLaunches(){
 }
 
 module.exports = {
-  getAllLaunches,addNewLaunch
+  getAllLaunches,
+  addNewLaunch
 };
