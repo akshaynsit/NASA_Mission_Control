@@ -14,6 +14,21 @@ const launch = {
 };
 
 launches.set(launch.flightNumber, launch);
+<<<<<<< HEAD
+=======
+//WAF to set a launches in a launches Map
+function addNewLaunch(launch){
+  latestFlightNumber+=1;
+  launches.set(
+    launch.flightNumber,
+    Object.assign(launch,{
+      flightNumber:latestFlightNumber,
+      upcoming:true,
+      success:true,
+      customers:['Akshay','NASA'],
+  }));
+}
+>>>>>>> parent of ae974e7 (Adding the Respond for Invalid Data Entry (400))
 
 function getAllLaunches() {
   return Array.from(launches.values());
@@ -33,6 +48,10 @@ function addNewLaunch(launch) {
 }
 
 module.exports = {
+<<<<<<< HEAD
   getAllLaunches,
   addNewLaunch,
+=======
+  getAllLaunches,addNewLaunch
+>>>>>>> parent of ae974e7 (Adding the Respond for Invalid Data Entry (400))
 };
