@@ -10,7 +10,7 @@ function httpAddNewLaunch(req,res){
         !launch.mission ||
         !launch.rocket ||
         !launch.launchDate ||
-        !launch.Destination
+        !launch.target
       ) {
         return res.status(400).json({
           error: 'Missing Data or Invalid Data',
