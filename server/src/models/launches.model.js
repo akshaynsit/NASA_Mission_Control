@@ -14,9 +14,13 @@ const launch = {
 };
 
 launches.set(launch.flightNumber, launch);
+
+function existsLaunchWithId(launchId){
+  return launches.has(launchId)
+}
 //WAF to set a launches in a launches Map
 function addNewLaunch(launch){
-  latestFlightNumber+=1;
+  latestFlightNumber +=1;
   launches.set(
     launch.flightNumber,
     Object.assign(launch,{
@@ -26,7 +30,6 @@ function addNewLaunch(launch){
       customers:['Akshay','NASA'],
   }));
 }
-
 
 function getAllLaunches() {
   return Array.from(launches.values());
@@ -45,7 +48,19 @@ function addNewLaunch(launch) {
   );
 }
 
+function abortLaunchById(launchId){
+  //Instead of deleting we get the data,so that we can get the info from aborted mission ERA of Big Data :)
+  //With Get will be In our historical list but mark unsuccessful
+  /* launch.delete(launchId); */
+  const aborted =launches.get(launchId);
+  aborted.upcoming =false;
+  aborted.success=false;
+  return aborted ;
+}
+
 module.exports = {
+  existsLaunchWithId,
   getAllLaunches,
-  addNewLaunch,
+  addNewLaunch,  
+  abortLaunchById,
 };
