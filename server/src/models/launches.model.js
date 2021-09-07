@@ -19,7 +19,7 @@ function existsLaunchWithId(launchId){
   return launches.has(launchId)
 }
 //WAF to set a launches in a launches Map
-function addNewLaunch(launch){
+/* function addNewLaunch(launch){
   latestFlightNumber +=1;
   launches.set(
     launch.flightNumber,
@@ -29,7 +29,7 @@ function addNewLaunch(launch){
       success:true,
       customers:['Akshay','NASA'],
   }));
-}
+} */
 
 function getAllLaunches() {
   return Array.from(launches.values());

@@ -17,7 +17,13 @@ const { getAllLaunches,
           });
         }
 
+
       launch.launchDate = new Date(launch.launchDate);
+      if (isNaN(launch.launchDate)){
+        return res.status(400).json({
+          error: 'Invalid Launch Date'
+        });
+      }
   
       addNewLaunch(launch);
       return res.status(201).json(launch)
